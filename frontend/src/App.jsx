@@ -24,7 +24,7 @@ const App = () => {
   console.log("hello");
 
   function fetchNotes() {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://day8-h4tt.onrender.com/api/notes")
       .then((res) => {
         console.log(res.data);
         setNote(res.data.note);
@@ -40,7 +40,7 @@ const App = () => {
     const { title, content } = e.target.elements;
     console.log(title.value, content.value);
 
-    axios.post("http://localhost:3000/api/notes", {
+    axios.post("https://day8-h4tt.onrender.com/api/notes", {
       title: title.value,
       content: content.value})
       .then((res) => {
@@ -52,7 +52,7 @@ const App = () => {
 
   function handleDelteNote(noteId) {
     console.log(noteId);
-    axios.delete("http://localhost:3000/api/notes/" + noteId)
+    axios.delete("https://day8-h4tt.onrender.com/api/notes/" + noteId)
       .then((res) => {
         console.log(res.data);
         fetchNotes();
